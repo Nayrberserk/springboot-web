@@ -29,8 +29,6 @@ public class Programa implements Serializable {
     @Column(name = "codigo")
     private String codigo;
 
-    @OneToMany(mappedBy = "programa", fetch = FetchType.LAZY)
-    private List<Curso> cursos;
 
     public Programa(Long id) {
     	   this.id = id;
@@ -70,12 +68,6 @@ public class Programa implements Serializable {
         this.codigo = codigo;
     }
 
-    public List<Curso> getCursos() {
-        return cursos;
-    }
 
-    public void setCursos(List<Curso> cursos) {
-        this.cursos = cursos;
-    }
 
 }

@@ -40,14 +40,13 @@ public class ProgramaController {
 	public String index(Model model){	
 		
 		model.addAttribute("programas",service.allPrograma());
-		return "admin/programa/formulario";
+		return "admin/programa/index";
 	}
 	
 	@RequestMapping("nuevo")
 	public String nuevo(Model model){
 		
 	model.addAttribute("programa", new Programa());
-	model.addAttribute("programas",service.allPrograma());
 	return "admin/programa/formulario";		
 	
 	}
@@ -60,7 +59,6 @@ public class ProgramaController {
 			return "redirect:/admin/programa";
 		}
 		model.addAttribute("programa", new Programa());
-		model.addAttribute("programas",service.allPrograma());
 		return "admin/programa/formulario";		
 	}
 	

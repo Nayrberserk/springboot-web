@@ -5,7 +5,6 @@ import org.hibernate.Query;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import pe.edu.tecsup.springmvc.dao.	ProgramaDAO;
-import pe.edu.tecsup.springmvc.model.Curso;
 import pe.edu.tecsup.springmvc.model.Programa;
 
 @Repository
@@ -27,7 +26,7 @@ public class ProgramaDAOH extends BaseHibernateDAO implements ProgramaDAO {
     
     @Override
     public Programa getByCodigo(String codigo) {
-        Criteria criteria = this.getSession().createCriteria(Curso.class);
+        Criteria criteria = this.getSession().createCriteria(Programa.class);
         criteria.add(Restrictions.eq("codigo", codigo));
         return (Programa) criteria.uniqueResult();
     }

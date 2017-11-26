@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cursos</title>
+        <title>Programa</title>
         <%@include file="/public/header.jsp" %>
     </head>
     <body>
@@ -14,14 +14,15 @@
                 <div class="col-md-12">
 
                     <a href="<%=request.getContextPath()%>/admin/programa/nuevo" class="btn btn-primary float-right" >Nuevo</a>
-                    <h1>Cursos</h1>
+                    <h1>Programas</h1>
 
                     <table class="table table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>Programa</th>
-                                <th>Descripcion</th>                          
-                                <th>Codigo</th>
+                                <th>Nombre</th>
+                                 <th>Descripción</th>
+                                <th>Código</th>
+                                
                                 <th></th>
                             </tr>
                         </thead>
@@ -31,7 +32,8 @@
                                     <td>${i.nombre}</td>
                                     <td>${i.descripcion}</td>
                                     <td>${i.codigo}</td>
-                                   
+                                 
+
                                     <td>
                                         <a href="<%=request.getContextPath()%>/admin/programa/update/${i.id}">Editar</a>
                                         <a href="<%=request.getContextPath()%>/admin/programa/delete/${i.id}">Eliminar</a>
