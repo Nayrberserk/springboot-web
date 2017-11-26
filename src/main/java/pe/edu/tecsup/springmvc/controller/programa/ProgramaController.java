@@ -21,7 +21,7 @@ public class ProgramaController {
 	
 	@Autowired
 	ProgramaService service;
-	
+	/**
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder){
 		dataBinder.registerCustomEditor(Date.class, new PropertyEditorSupport(){
@@ -35,7 +35,7 @@ public class ProgramaController {
 			}					
 		});		
 	}
-	
+	**/
 	@GetMapping
 	public String index(Model model){	
 		
@@ -58,8 +58,9 @@ public class ProgramaController {
 		if(programa==null){
 			return "redirect:/admin/programa";
 		}
-		model.addAttribute("programa", new Programa());
-		return "admin/programa/formulario";		
+	    model.addAttribute("programa", programa);
+        model.addAttribute("programas", service.allPrograma());
+        return "admin/programa/formulario";	
 	}
 	
 	@RequestMapping("save")
